@@ -7,9 +7,11 @@ body {
 }
 
 header {
-    background-color: #e50914;
+    background-color: #970008;
     padding: 20px;
     text-align: center;
+    box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.5),
+                    0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
 }
 
 h1 {
@@ -35,7 +37,7 @@ button {
     font-size: 1em;
     border: none;
     border-radius: 5px;
-    background-color: #e50914;
+    background-color: #970008;
     color: white;
     cursor: pointer;
     text-transform: uppercase;
@@ -43,7 +45,7 @@ button {
 }
 
 button:hover {
-    background-color: #f40612;
+    background-color: #970008;
 }
 
 .movie-grid {
@@ -89,19 +91,60 @@ button:hover {
     font-size: 0.9em;
 }
 
-.trailer-button {
-    background-color: #e50914;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 10px;
-    padding: 10px;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
+
+
+.movie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.trailer-button:hover {
-    background-color: #f40612;
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#loading, #error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+#loading {
+    background: #007bff;
+    color: white;
+}
+
+#error-message {
+    background: #dc3545;
+    color: white;
+}
+
+.movie-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
