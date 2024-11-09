@@ -38,7 +38,7 @@ class MovieAPI {
             const response = await fetch(url);
             const data = await response.json();
             const genres = await this.getGenreNames();
-            const movies = data.results || [];
+            const movies = data.results.slice(0, 16);
             return { movies, genres };
         } catch (error) {
             console.error('Erro ao buscar filmes:', error);
