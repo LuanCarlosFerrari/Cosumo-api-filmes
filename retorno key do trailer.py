@@ -172,6 +172,8 @@ class MoviePresenter:
                 print(f"- {movie['title']} (Média de Votos: {movie['vote_average']})")
             print()
 
+
+
 # Exemplo de uso
 api_key = "65d9dba8957eebc2b5b4dc05537de1bf"
 movie_api = MovieAPI(api_key)
